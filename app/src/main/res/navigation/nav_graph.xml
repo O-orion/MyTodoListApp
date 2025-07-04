@@ -27,6 +27,11 @@
             app:destination="@id/taskInfo"
             />
 
+        <action
+            android:id="@+id/action_homeFragment_to_perfilFragment"
+            app:destination="@id/perfil"
+            />
+
     </fragment>
 
     <fragment
@@ -49,6 +54,19 @@
 
         <action
             android:id="@+id/action_taskInfoFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.example.mytodolist.fragments.PerfilFragments"
+        android:label="perfil"
+        >
+
+        <action
+            android:id="@+id/action_perfilFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             />
 

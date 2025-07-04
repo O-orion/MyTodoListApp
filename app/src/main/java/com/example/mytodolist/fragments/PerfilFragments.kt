@@ -6,16 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.mytodolist.R
-import com.example.mytodolist.adapter.TaskAdapter
-import com.example.mytodolist.model.Task
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragments.newInstance] factory method to
+ * Use the [PerfilFragments.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragments : Fragment() {
+class PerfilFragments : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,37 +36,17 @@ class HomeFragments : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_home_fragments, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_perfil_fragments, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState);
+        super.onViewCreated(view, savedInstanceState)
 
-        val recycleView = view.findViewById<RecyclerView>(R.id.rvTasks);
-        val btn_newTask = view.findViewById<FloatingActionButton>(R.id.btn_newTask);
-        val img_perfil = view.findViewById<ImageView>(R.id.imgPerfil);
+        val btn_voltar = view.findViewById<Button>(R.id.btn_voltar);
 
-        recycleView.layoutManager = LinearLayoutManager(requireContext());
-
-        val tasks = listOf(
-            Task("Estudar Kotlin", "10:00 - 11:00", "Revisar RecyclerView"),
-            Task("Desenhar UI", "11:30 - 12:30", "Fazer telas do app"),
-            Task("Ler Medium", "14:00 - 15:00", "Artigo sobre Android moderno")
-        )
-
-        recycleView.adapter = TaskAdapter(tasks) { task ->
-            findNavController().navigate(R.id.action_homeFragment_to_taskInfoFragment);
-        }
-
-
-        btn_newTask.setOnClickListener {
-
-            findNavController().navigate(R.id.action_homeFragment_to_newTaskFragment)
-        }
-
-        img_perfil.setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_perfilFragment);
+        btn_voltar.setOnClickListener {
+            findNavController().navigate(R.id.action_perfilFragment_to_homeFragment);
         }
 
     }
@@ -86,12 +58,12 @@ class HomeFragments : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragments.
+         * @return A new instance of fragment PerfilFragments.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeFragments().apply {
+            PerfilFragments().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
