@@ -9,7 +9,6 @@
     android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,13 +30,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
-                android:text="Welcome back,"
+                android:text="Bem-Vindo de Volta!"
                 android:textSize="14sp"
                 android:textColor="@color/text_secondary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="Lucas! 😎"
+                android:text="Lucas"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="@color/text_primary"
@@ -47,7 +46,6 @@
     </LinearLayout>
 
 
-    <!-- Card de progresso -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +61,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Your progress now"
+                android:text="Seu progresso até aqui"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@color/text_primary"
@@ -84,14 +82,13 @@
                 android:id="@+id/tvProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8/12 Task Complete - 68%"
+                android:text="8/12 Tarefas Completas - 68%"
                 android:textSize="14sp"
                 android:textColor="@color/text_secondary"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Filtros -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,15 +97,15 @@
         android:orientation="horizontal">
 
         <Button
-            android:text="Antigas"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/primary_color"
+            android:text="A Fazer"
+            android:backgroundTint="@color/accent_color"
+            android:textColor="@color/button_text_color"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
         <Button
-            android:text="Recentes"
+            android:text="Fazendo"
             android:backgroundTint="@color/primary_color"
             android:textColor="@color/white"
             android:layout_weight="1"
@@ -117,15 +114,15 @@
             android:layout_marginHorizontal="8dp"/>
 
         <Button
-            android:text="Futuras"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/primary_color"
+            android:text="Concluído"
+            android:backgroundTint="@color/success_color"
+            android:textColor="@color/button_text_color"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <!-- RecyclerView para os cards de tarefas -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTasks"
         android:layout_width="match_parent"

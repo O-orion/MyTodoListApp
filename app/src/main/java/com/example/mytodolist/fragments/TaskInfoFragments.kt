@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.mytodolist.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,6 +38,17 @@ class TaskInfoFragments : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_task_info_fragments, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btn_voltar = view.findViewById<Button>(R.id.btn_voltar);
+
+        btn_voltar.setOnClickListener {
+            findNavController().navigate(R.id.action_taskInfoFragment_to_homeFragment);
+        }
+
     }
 
     companion object {

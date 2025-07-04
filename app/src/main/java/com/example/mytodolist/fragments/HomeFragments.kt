@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -59,12 +61,15 @@ class HomeFragments : Fragment() {
             Task("Ler Medium", "14:00 - 15:00", "Artigo sobre Android moderno")
         )
 
-        recycleView.adapter = TaskAdapter(tasks);
-
-        btn_newTask.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_newTaskFragment)
+        recycleView.adapter = TaskAdapter(tasks) { task ->
+            findNavController().navigate(R.id.action_homeFragment_to_taskInfoFragment);
         }
 
+
+        btn_newTask.setOnClickListener {
+
+            findNavController().navigate(R.id.action_homeFragment_to_newTaskFragment)
+        }
 
     }
 
