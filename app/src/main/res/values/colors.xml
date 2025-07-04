@@ -1,0 +1,21 @@
+<resources>
+    <color name="black">#1C1C1E</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Cores principais -->
+    <color name="primary_color">#32AEB2</color>
+    <color name="primary_dark">#278D90</color>
+    <color name="secondary_color">#F3F4F6</color>
+    <color name="accent_color">#FFD166</color>
+
+    <!-- Texto -->
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+
+    <!-- Botões -->
+    <color name="button_color">#32AEB2</color>
+    <color name="button_text_color">#FFFFFF</color>
+
+    <!-- Erros ou alertas -->
+    <color name="error_color">#EF4444</color>
+</resources>
